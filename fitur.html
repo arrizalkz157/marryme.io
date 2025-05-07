@@ -2,15 +2,15 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fitur - Wevitation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fitur - MarryMe</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: #fff;
       padding: 0;
+      background: #fff;
     }
 
     /* Navbar */
@@ -21,28 +21,24 @@
       padding: 15px 50px;
       background-color: #fff;
       border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
 
     .navbar .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ec407a;
       display: flex;
       align-items: center;
-      font-weight: bold;
-      font-size: 20px;
-      color: #333;
     }
 
-    .navbar .logo img {
-      height: 32px;
-      margin-right: 10px;
+    .navbar .logo i {
+      margin-right: 8px;
+      font-size: 24px;
     }
 
     .navbar .nav-links {
       display: flex;
       gap: 30px;
-      align-items: center;
     }
 
     .navbar .nav-links a {
@@ -52,115 +48,104 @@
     }
 
     .navbar .nav-links a.active {
-      color: #880e4f;
+      color: #ec407a;
       font-weight: bold;
     }
 
-    .navbar .social-icons {
+    .navbar .social-login {
       display: flex;
-      gap: 15px;
       align-items: center;
+      gap: 15px;
     }
 
-    .navbar .social-icons i {
+    .navbar .social-login i {
+      color: #ec407a;
       font-size: 18px;
-      color: #333;
       cursor: pointer;
     }
 
-    .login-button {
-      background-color: #880e4f;
+    .navbar .login-button {
+      background-color: #ec407a;
       color: white;
       padding: 8px 18px;
       border-radius: 20px;
       text-decoration: none;
       font-size: 14px;
-      margin-left: 10px;
     }
 
     /* Container */
     .container {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 60px 20px;
-      text-align: center;
     }
 
     h1 {
+      text-align: center;
       font-size: 36px;
       margin-bottom: 10px;
-      font-weight: 700;
     }
 
     p.subtitle {
+      text-align: center;
       font-size: 18px;
-      color: #666;
+      color: #ec407a;
       margin-bottom: 50px;
     }
 
-    /* Features Grid */
-    .features {
+    .fitur-wrapper {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .fitur-list {
+      flex: 1;
+    }
+
+    .fitur-item {
+      margin-bottom: 30px;
+    }
+
+    .fitur-item h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .fitur-item p {
+      margin: 5px 0 0;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .fitur-icons {
+      display: flex;
+      flex-direction: column;
       gap: 30px;
     }
 
-    .feature-item {
-      display: flex;
-      align-items: center;
-      width: 48%;
-      text-align: left;
-      gap: 15px;
-    }
-
     .icon-circle {
-      width: 60px;
-      height: 60px;
-      border: 1px solid #c2185b;
+      width: 50px;
+      height: 50px;
+      border: 2px solid #ec407a;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
-      color: #c2185b;
-      flex-shrink: 0;
-    }
-
-    .feature-text h3 {
-      margin: 0;
-      font-size: 18px;
-      font-weight: bold;
-      color: #222;
-    }
-
-    .feature-text p {
-      margin: 4px 0 0;
-      font-size: 14px;
-      color: #777;
+      color: #ec407a;
+      font-size: 20px;
     }
 
     @media (max-width: 768px) {
-      .feature-item {
-        width: 100%;
+      .fitur-wrapper {
+        flex-direction: column;
+        align-items: center;
       }
 
-      .navbar {
-        flex-wrap: wrap;
-        padding: 15px 20px;
-        justify-content: center;
-      }
-
-      .navbar .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .navbar .logo, .navbar .social-icons {
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 10px;
+      .fitur-list, .fitur-icons {
+        align-items: center;
       }
     }
   </style>
@@ -169,10 +154,7 @@
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">
-      <img src="https://wevitation.com/img/logo.svg" alt="Wevitation Logo">
-      Wevitation
-    </div>
+    <div class="logo"><i class="fas fa-heart"></i> MarryMe</div>
     <div class="nav-links">
       <a href="#">Home</a>
       <a href="#" class="active">Fitur</a>
@@ -180,10 +162,10 @@
       <a href="#">Desain</a>
       <a href="#">Daftar</a>
     </div>
-    <div class="social-icons">
+    <div class="social-login">
       <i class="fab fa-facebook-f"></i>
       <i class="fab fa-instagram"></i>
-      <a href="#" class="login-button"><i class="fas fa-sign-in-alt"></i> Login</a>
+      <a href="#" class="login-button">Login</a>
     </div>
   </nav>
 
@@ -192,45 +174,37 @@
     <h1>Fitur</h1>
     <p class="subtitle">Lebih Hemat & Fitur Sangat Lengkap</p>
 
-    
-      <div class="feature-item">
-        <div class="feature-text">
+    <div class="fitur-wrapper">
+      <!-- Fitur List -->
+      <div class="fitur-list">
+        <div class="fitur-item">
           <h3>Music</h3>
           <p>Integrasikan musik di undanganmu dengan mudah.</p>
         </div>
-        <div class="icon-circle"><i class="fas fa-music"></i></div>
-      </div>
-
-      <div class="feature-item">
-        <div class="feature-text">
+        <div class="fitur-item">
           <h3>Ucapan & Doa</h3>
           <p>Dapatkan ucapan & doa dari teman-temanmu.</p>
         </div>
-        <div class="icon-circle"><i class="fas fa-comment-dots"></i></div>
-      </div>
-
-      <div class="feature-item">
-        <div class="feature-text">
+        <div class="fitur-item">
           <h3>Kado</h3>
           <p>Terima Kado Cashless dari teman-temanmu.</p>
         </div>
-        <div class="icon-circle"><i class="fas fa-gift"></i></div>
-      </div>
-
-      <div class="feature-item">
-        <div class="feature-text">
+        <div class="fitur-item">
           <h3>Galeri Foto & Video</h3>
           <p>Tampilkan foto & video terbaik bersama pasanganmu.</p>
         </div>
-        <div class="icon-circle"><i class="fas fa-image"></i></div>
-      </div>
-
-      
-      <div class="feature-item">
-        <div class="feature-text">
+        <div class="fitur-item">
           <h3>Kirim WA</h3>
           <p>Kirim undangan ke WA temanmu dengan mudah.</p>
         </div>
+      </div>
+
+      <!-- Icon List -->
+      <div class="fitur-icons">
+        <div class="icon-circle"><i class="fas fa-music"></i></div>
+        <div class="icon-circle"><i class="fas fa-comment-dots"></i></div>
+        <div class="icon-circle"><i class="fas fa-gift"></i></div>
+        <div class="icon-circle"><i class="fas fa-image"></i></div>
         <div class="icon-circle"><i class="fas fa-paper-plane"></i></div>
       </div>
     </div>
@@ -238,3 +212,4 @@
 
 </body>
 </html>
+
