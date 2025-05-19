@@ -41,68 +41,69 @@
       margin-bottom: 40px;
     }
 
-    /* Floating Menu */
+    /* Floating Menu di kiri gambar */
     .floating-menu {
       position: absolute;
       top: 50%;
-      right: -60px;
+      left: 20px;
       transform: translateY(-50%);
-      background: white;
+      background: #fff;
       border-radius: 40px;
-      padding: 10px 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
       width: 60px;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 15px;
-    }
-
-    .menu-item {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #d81b60;
-      font-size: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .menu-item:hover {
-      color: #ad1457;
+      z-index: 10;
     }
 
     .menu-couple {
       background: #d81b60;
       color: white;
-      border-radius: 30px;
-      padding: 5px 15px;
+      border-radius: 20px;
+      padding: 6px 12px;
       font-size: 14px;
       display: flex;
       align-items: center;
-      gap: 5px;
-      margin-bottom: 10px;
+      gap: 6px;
+      white-space: nowrap;
+      transform: translateX(-10px);
     }
 
-    .menu-couple span {
-      font-size: 16px;
+    .menu-item {
+      background: #d81b60;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .menu-item:hover {
+      background: #ad1457;
     }
   </style>
 </head>
 <body>
 
   <div class="left-side">
-    <!-- Floating Menu -->
+    <!-- Tombol melayang di samping foto -->
     <div class="floating-menu">
       <div class="menu-couple">
-        <span>❤️</span>
-        Couple
+        ❤️ Couple
       </div>
       <button class="menu-item" title="Galeri">🖼️</button>
       <button class="menu-item" title="Tanggal">📅</button>
       <button class="menu-item" title="Lokasi">🗺️</button>
-      <button class="menu-item" title="RSVP">✏️</button>
+      <button class="menu-item" title="RSVP">📝</button>
     </div>
   </div>
 
