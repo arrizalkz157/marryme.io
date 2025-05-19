@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Undangan Ari & Rona</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .left-side {
+      flex: 1;
+      background-image: url('pengantin.jpg'); /* Ganti dengan path gambar pasangan */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .right-side {
+      flex: 1;
+      overflow-y: scroll;
+      background: #fefefe;
+      padding: 20px;
+      position: relative;
+    }
+
+    .content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    /* Floating Vertical Menu */
+    .floating-menu {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translateX(380px) translateY(-50%); /* Sesuaikan jarak dari tengah */
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .floating-menu button {
+      background: #f06292;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    .floating-menu button:hover {
+      background: #ec407a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="left-side"></div>
+
+  <div class="right-side">
+    <!-- Floating Menu -->
+    <div class="floating-menu">
+      <button title="Lokasi">📍</button>
+      <button title="Pasangan">👩‍❤️‍👨</button>
+      <button title="Galeri">🖼️</button>
+      <button title="RSVP">📝</button>
+    </div>
+
+    <div class="content">
+      <div class="section">
+        <img src="undangan-atas.jpg" style="width: 100%;" alt="Header Undangan">
+      </div>
+      <div class="section">
+        <h2>Ari & Rona</h2>
+        <p>02 Februari 2025</p>
+      </div>
+      <div class="section">
+        <h3>Lokasi</h3>
+        <p>Taman Indah, Jakarta</p>
+      </div>
+      <!-- Tambahkan bagian lainnya sesuai kebutuhan -->
+    </div>
+  </div>
+
+</body>
+</html>
