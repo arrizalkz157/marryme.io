@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Undangan Ari & Rona</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fefefe;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .section {
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .section:nth-child(odd) {
+      background-color: #fff;
+    }
+
+    .section:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .logo {
+      font-size: 40px;
+      font-weight: bold;
+      color: #a52a6b;
+      margin-bottom: 10px;
+    }
+
+    .main-title {
+      font-size: 36px;
+      color: #d81b60;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .date-display {
+      display: flex;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .quote {
+      font-style: italic;
+      text-align: center;
+      max-width: 600px;
+      color: #555;
+    }
+
+    .photo-frame {
+      border: 8px solid #a52a6b;
+      border-radius: 20px;
+      padding: 8px;
+      width: 250px;
+      height: 300px;
+      background: #fff url('hiasan-frame.png') no-repeat center;
+      background-size: contain;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .name {
+      font-size: 24px;
+      color: #d81b60;
+      font-weight: bold;
+      margin-top: 10px;
+      text-transform: uppercase;
+    }
+
+    .family-info {
+      font-size: 16px;
+      color: #555;
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    .butterfly {
+      position: absolute;
+      width: 50px;
+      animation: fly 6s infinite ease-in-out alternate;
+    }
+
+    .butterfly.left {
+      top: 30px;
+      left: 20px;
+      animation-delay: 0s;
+    }
+
+    .butterfly.right {
+      top: 60px;
+      right: 20px;
+      animation-delay: 2s;
+    }
+
+    @keyframes fly {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(5deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+
+    .title {
+      font-size: 28px;
+      color: #a52a6b;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Layer 1: AR, Nama, Tanggal -->
+  <section class="section" style="background-image: url('background-royal.jpg');">
+    <div class="logo">AR</div>
+    <div class="main-title">Ari & Rona</div>
+    <div class="subtitle">08.00 WIB</div>
+    <div class="date-display">
+      <div>02</div>
+      <div>25</div>
+      <div>APRIL</div>
+    </div>
+    <img src="kupu-kupu.png" class="butterfly left" alt="Kupu-kupu">
+    <img src="kupu-kupu.png" class="butterfly right" alt="Kupu-kupu">
+  </section>
+
+  <!-- Layer 2: Kutipan Rohani -->
+  <section class="section">
+    <div class="logo">AR</div>
+    <p class="quote">
+      "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Tuhan, tidak boleh diceraikan manusia." <br>
+      — Matius 19:6
+    </p>
+  </section>
+
+  <!-- Layer 3: Pengantin Pria -->
+  <section class="section">
+    <div class="title">The Wedding Of</div>
+    <div class="photo-frame">
+      <img src="foto-pria.jpg" alt="Pengantin Pria">
+    </div>
+    <div class="name">ARI WIJAYA</div>
+    <div class="family-info">Putra Kedua dari</div>
+    <div class="family-info">Ibu Muaedah, M.Pd</div>
+  </section>
+
+  <!-- Layer 4: Pengantin Wanita -->
+  <section class="section">
+    <div class="photo-frame">
+      <img src="foto-wanita.jpg" alt="Pengantin Wanita">
+    </div>
+    <div class="name">RONA</div>
+    <div class="family-info">Putri Tunggal dari</div>
+    <div class="family-info">Bapak Akbar, S.Kom</div>
+    <div class="family-info">& Ibu Siti, S.Pd</div>
+  </section>
+
+</body>
+</html>
