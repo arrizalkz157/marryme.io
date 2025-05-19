@@ -1,41 +1,175 @@
-<style>
-  .right-side {
-    flex: 1;
-    overflow-y: scroll;
-    padding: 20px;
-    background: url('https://www.transparenttextures.com/patterns/arabesque.png'),
-                linear-gradient(to bottom right, #fff8e7, #fceabb);
-    background-blend-mode: overlay;
-    background-size: 200px 200px;
-    font-family: 'Georgia', serif;
-    color: #4b2e2e;
-  }
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Undangan Ari & Rona</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  .right-side h2, .right-side h3 {
-    font-family: 'Georgia', serif;
-    color: #8b5e3c;
-    text-align: center;
-    margin-bottom: 8px;
-  }
+    body {
+      display: flex;
+      height: 100vh;
+      font-family: sans-serif;
+      background: #fefefe;
+    }
 
-  .right-side p {
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
+    .left-side {
+      flex: 1;
+      background-image: url('pengantin.jpg'); /* Ganti path sesuai gambar */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
 
-  .section img {
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
+    .right-side {
+      flex: 1;
+      overflow-y: scroll;
+      padding: 20px;
+      background: #fefefe;
+    }
 
-  .content {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  }
-</style>
+    .content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .floating-menu {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 100;
+      align-items: flex-start;
+    }
+
+    .menu-button {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 50%;
+      border: none;
+      padding: 10px;
+      width: 40px;
+      height: 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .menu-button svg {
+      width: 20px;
+      height: 20px;
+      fill: #d81b60;
+      flex-shrink: 0;
+    }
+
+    .menu-button span {
+      margin-left: 8px;
+      font-size: 14px;
+      color: #d81b60;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .menu-button.active {
+      background: #d81b60;
+      border-radius: 999px;
+      width: auto;
+      padding: 10px 16px;
+    }
+
+    .menu-button.active svg {
+      fill: #fff;
+    }
+
+    .menu-button.active span {
+      color: #fff;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="left-side"></div>
+
+  <div class="right-side">
+    <div class="content">
+      <div class="section">
+        <img src="undangan-atas.jpg" style="width: 100%;" alt="Header Undangan">
+      </div>
+      <div class="section">
+        <h2>Ari & Rona</h2>
+        <p>02 Februari 2025</p>
+      </div>
+      <div class="section">
+        <h3>Lokasi</h3>
+        <p>Taman Indah, Jakarta</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="floating-menu">
+    <button class="menu-button active" onclick="setActive(this)">
+      <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 
+      5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 
+      4.5 2.09C13.09 3.81 14.76 3 16.5 
+      3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 
+      6.86-8.55 11.54L12 21.35z"/></svg>
+      <span>Couple</span>
+    </button>
+    <button class="menu-button" onclick="setActive(this)">
+      <svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 
+      2 0 0 0-2 2v14a2 2 0 0 0 2 
+      2h14a2 2 0 0 0 2-2zM7 7h10v2H7V7zm0 
+      4h10v2H7v-2zm0 4h7v2H7v-2z"/></svg>
+      <span>Galeri</span>
+    </button>
+    <button class="menu-button" onclick="setActive(this)">
+      <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 
+      2 0 0 0-2 2v14a2 2 0 0 0 2 
+      2h14a2 2 0 0 0 2-2V6a2 2 0 0 
+      0-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+      <span>Tanggal</span>
+    </button>
+    <button class="menu-button" onclick="setActive(this)">
+      <svg viewBox="0 0 24 24"><path d="M20.5 3h-17C2.7 3 2 
+      3.7 2 4.5v15c0 .8.7 1.5 1.5 
+      1.5h17c.8 0 1.5-.7 1.5-1.5v-15c0-.8-.7-1.5-1.5-1.5zM12 
+      19l-4-4h8l-4 4zm4-6H8v-2h8v2zm0-4H8V7h8v2z"/></svg>
+      <span>Lokasi</span>
+    </button>
+    <button class="menu-button" onclick="setActive(this)">
+      <svg viewBox="0 0 24 24"><path d="M3 3v18h18V3H3zm16 
+      16H5V5h14v14zm-4-9H7v2h8v-2zm0 
+      4H7v2h8v-2zm-4-8H7v2h4V6z"/></svg>
+      <span>RSVP</span>
+    </button>
+  </div>
+
+  <script>
+    function setActive(el) {
+      document.querySelectorAll('.menu-button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      el.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
 
 
 
