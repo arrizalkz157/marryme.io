@@ -1,98 +1,194 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ari & Rona Wedding Invitation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Undangan Ari & Rona</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Playfair Display', serif;
-      background: #f8f4ef;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .hero {
-      background-image: url('7079c156-6033-4c5c-af2e-7a1ccb720a23.png');
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left-side {
+      flex: 1;
+      background-image: url('demo-image.png');
       background-size: cover;
       background-position: center;
-      text-align: center;
-      padding: 100px 20px;
-      color: #000;
     }
-    .hero h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3em;
-      margin: 0;
-      color: #d63384;
-    }
-    .hero h2 {
-      font-size: 1.5em;
-      margin: 5px 0;
-    }
-    .hero .date-time {
-      font-size: 1.2em;
-      margin-top: 20px;
-    }
-    .scroll-down {
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #555;
+
+    .right-side {
+      flex: 1;
+      height: 100vh;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      background: url('demo-background.jpg') no-repeat center top;
+      background-size: cover;
     }
 
     .section {
-      padding: 60px 20px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #333;
       text-align: center;
-      background: #fff;
+      padding: 40px;
     }
-    .section img {
-      width: 220px;
-      border-radius: 15px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    }
-    .section h3 {
-      font-family: 'Great Vibes', cursive;
+
+    .section h2 {
       font-size: 2em;
-      margin: 15px 0 5px;
-      color: #d63384;
+      color: #a52a6b;
+      margin-bottom: 10px;
     }
+
     .section p {
-      font-size: 1em;
-      margin: 0;
+      font-size: 1.2em;
     }
-    .floral-frame {
-      background-image: url('6b751caf-0a3c-4def-aba5-71fbe40dc8b5.png');
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      padding: 30px;
+
+    .flower-container {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .flower {
+      width: 80px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .flower:nth-child(2) { animation-delay: 1s; }
+    .flower:nth-child(3) { animation-delay: 2s; }
+    .flower:nth-child(4) { animation-delay: 3s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
+    }
+
+    .floating-menu {
+      position: fixed;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 100;
+    }
+
+    .menu-button {
+      background: white;
+      border: none;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .menu-button svg {
+      width: 20px;
+      height: 20px;
+      fill: #d81b60;
+    }
+
+    .menu-button span {
+      margin-left: 8px;
+      font-size: 14px;
+      color: #d81b60;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .menu-button:hover span {
+      opacity: 1;
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1>AR</h1>
-    <h2>The Wedding of</h2>
-    <h2><strong>ARI</strong> dan <strong>RONA</strong></h2>
-    <div class="date-time">
-      <p>08:00 WIB</p>
-      <p>02 APRIL 2025</p>
-    </div>
-    <div class="scroll-down">Scroll ke bawah ⬇️</div>
-  </div>
+<div class="container">
+  <div class="left-side"></div>
 
-  <!-- Groom Section -->
-  <div class="section">
-    <div class="floral-frame">
-      <img src="https://i.ibb.co/yF8MCBz/groom.jpg" alt="Ari Wijaya">
+  <div class="right-side">
+    <div class="section" id="couple">
+      <h2>Ari & Rona</h2>
+      <p>02 Februari 2025</p>
     </div>
-    <h3>ARI WIJAYA</h3>
-    <p>@ourwedding.link</p>
-  </div>
 
-  <!-- Add more sections for bride, gallery, countdown, RSVP, etc -->
+    <div class="section" id="galeri">
+      <h2>Galeri</h2>
+      <img src="demo-image.png" alt="Galeri" style="width:80%; max-width:300px; border-radius:20px;">
+      <p>Kenangan indah perjalanan cinta kami</p>
+    </div>
+
+    <div class="section" id="tanggal">
+      <h2>Tanggal Pernikahan</h2>
+      <p>Minggu, 02 Februari 2025</p>
+    </div>
+
+    <div class="section" id="lokasi">
+      <h2>Lokasi</h2>
+      <p>Taman Indah, Jakarta</p>
+    </div>
+
+    <div class="section" id="rsvp">
+      <h2>Konfirmasi Kehadiran</h2>
+      <p>Silakan hubungi kami untuk RSVP</p>
+    </div>
+
+    <div class="flower-container">
+      <img src="demo-bunga1.png" class="flower" alt="Bunga 1">
+      <img src="demo-bunga2.png" class="flower" alt="Bunga 2">
+      <img src="demo-bunga3.png" class="flower" alt="Bunga 3">
+      <img src="demo-bunga4.png" class="flower" alt="Bunga 4">
+    </div>
+  </div>
+</div>
+
+<div class="floating-menu">
+  <button class="menu-button" onclick="scrollToSection('couple')">
+    ❤️ <span>Couple</span>
+  </button>
+  <button class="menu-button" onclick="scrollToSection('galeri')">
+    📷 <span>Galeri</span>
+  </button>
+  <button class="menu-button" onclick="scrollToSection('tanggal')">
+    📅 <span>Tanggal</span>
+  </button>
+  <button class="menu-button" onclick="scrollToSection('lokasi')">
+    📍 <span>Lokasi</span>
+  </button>
+  <button class="menu-button" onclick="scrollToSection('rsvp')">
+    📨 <span>RSVP</span>
+  </button>
+</div>
+
+<script>
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
 
 </body>
 </html>
