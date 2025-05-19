@@ -14,6 +14,7 @@
       display: flex;
       height: 100vh;
       font-family: sans-serif;
+      background: #fefefe;
     }
 
     .left-side {
@@ -21,14 +22,14 @@
       background-image: url('pengantin.jpg'); /* Ganti dengan path gambar pasangan */
       background-size: cover;
       background-position: center;
+      position: relative;
     }
 
     .right-side {
       flex: 1;
       overflow-y: scroll;
-      background: #fefefe;
       padding: 20px;
-      position: relative;
+      background: #fefefe;
     }
 
     .content {
@@ -40,49 +41,72 @@
       margin-bottom: 40px;
     }
 
-    /* Floating Vertical Menu */
+    /* Floating Menu */
     .floating-menu {
-      position: fixed;
+      position: absolute;
       top: 50%;
-      left: 50%;
-      transform: translateX(380px) translateY(-50%); /* Sesuaikan jarak dari tengah */
+      right: -60px;
+      transform: translateY(-50%);
+      background: white;
+      border-radius: 40px;
+      padding: 10px 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 60px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      z-index: 10;
+      align-items: center;
+      gap: 15px;
     }
 
-    .floating-menu button {
-      background: #f06292;
+    .menu-item {
+      background: none;
       border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      color: white;
-      font-size: 18px;
       cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: background 0.3s;
+      color: #d81b60;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .floating-menu button:hover {
-      background: #ec407a;
+    .menu-item:hover {
+      color: #ad1457;
+    }
+
+    .menu-couple {
+      background: #d81b60;
+      color: white;
+      border-radius: 30px;
+      padding: 5px 15px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+
+    .menu-couple span {
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
 
-  <div class="left-side"></div>
-
-  <div class="right-side">
+  <div class="left-side">
     <!-- Floating Menu -->
     <div class="floating-menu">
-      <button title="Lokasi">📍</button>
-      <button title="Pasangan">👩‍❤️‍👨</button>
-      <button title="Galeri">🖼️</button>
-      <button title="RSVP">📝</button>
+      <div class="menu-couple">
+        <span>❤️</span>
+        Couple
+      </div>
+      <button class="menu-item" title="Galeri">🖼️</button>
+      <button class="menu-item" title="Tanggal">📅</button>
+      <button class="menu-item" title="Lokasi">🗺️</button>
+      <button class="menu-item" title="RSVP">✏️</button>
     </div>
+  </div>
 
+  <div class="right-side">
     <div class="content">
       <div class="section">
         <img src="undangan-atas.jpg" style="width: 100%;" alt="Header Undangan">
@@ -95,9 +119,9 @@
         <h3>Lokasi</h3>
         <p>Taman Indah, Jakarta</p>
       </div>
-      <!-- Tambahkan bagian lainnya sesuai kebutuhan -->
     </div>
   </div>
 
 </body>
 </html>
+
