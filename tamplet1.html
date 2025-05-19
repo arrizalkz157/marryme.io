@@ -41,12 +41,12 @@
       margin-bottom: 40px;
     }
 
-    /* Floating Menu */
+    /* Floating Menu di tengah antara kiri dan kanan */
     .floating-menu {
-      position: absolute;
+      position: fixed;
       top: 50%;
-      left: 20px;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate(-50%, -50%);
       background: #fff;
       border-radius: 50px;
       padding: 15px 10px;
@@ -106,18 +106,7 @@
 </head>
 <body>
 
-  <div class="left-side">
-    <!-- Floating Menu -->
-    <div class="floating-menu">
-      <div class="menu-couple active" onclick="setActive(this)">
-        ❤️ Couple
-      </div>
-      <button class="menu-item" onclick="setActive(this)" title="Galeri">🖼️</button>
-      <button class="menu-item" onclick="setActive(this)" title="Tanggal">📅</button>
-      <button class="menu-item" onclick="setActive(this)" title="Lokasi">🗺️</button>
-      <button class="menu-item" onclick="setActive(this)" title="RSVP">📝</button>
-    </div>
-  </div>
+  <div class="left-side"></div>
 
   <div class="right-side">
     <div class="content">
@@ -135,17 +124,28 @@
     </div>
   </div>
 
+  <!-- Floating Menu Tengah -->
+  <div class="floating-menu">
+    <div class="menu-couple active" onclick="setActive(this)">
+      ❤️ Couple
+    </div>
+    <button class="menu-item" onclick="setActive(this)" title="Galeri">🖼️</button>
+    <button class="menu-item" onclick="setActive(this)" title="Tanggal">📅</button>
+    <button class="menu-item" onclick="setActive(this)" title="Lokasi">🗺️</button>
+    <button class="menu-item" onclick="setActive(this)" title="RSVP">📝</button>
+  </div>
+
   <script>
     function setActive(el) {
-      // Hapus semua kelas aktif
       document.querySelectorAll('.menu-item, .menu-couple').forEach(btn => {
         btn.classList.remove('active');
       });
-      // Tambahkan kelas aktif ke elemen yang diklik
       el.classList.add('active');
     }
   </script>
+
 </body>
 </html>
+
 
 
