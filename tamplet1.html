@@ -68,18 +68,47 @@
       display: block;
     }
 
-    .hero .date {
-      margin-top: 30px;
-      font-size: 18px;
-      font-family: 'Cormorant Garamond', serif;
+    .date-container {
       display: flex;
       justify-content: center;
-      gap: 60px;
+      align-items: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .date-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       color: #2f3e46;
     }
 
-    .hero .date div {
+    .date-box .line {
+      width: 80px;
+      height: 1.5px;
+      background-color: #1e2e3e;
+      margin: 4px 0;
+    }
+
+    .date-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+    }
+
+    .date-center {
       text-align: center;
+      font-family: 'Cinzel', serif;
+      color: #2f3e46;
+    }
+
+    .date-center .day {
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .date-center .year {
+      font-size: 20px;
+      margin-top: 4px;
     }
 
     .scroll-icon {
@@ -157,7 +186,6 @@
       opacity: 1;
     }
 
-    /* Bunga animasi */
     .flower-container {
       position: absolute;
       bottom: 0;
@@ -178,12 +206,8 @@
     .flower:nth-child(4) { animation-delay: 3s; }
 
     @keyframes float {
-      0%, 100% {
-        transform: translateY(0) rotate(0deg);
-      }
-      50% {
-        transform: translateY(-10px) rotate(2deg);
-      }
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
     }
   </style>
 </head>
@@ -197,22 +221,33 @@
         <div class="subtitle">The Wedding</div>
         <div class="initials">A&R</div>
         <div class="names">
-          <span>Ari dan Rona </span>
+          <span>Ari dan Rona</span>
         </div>
-        <div class="date">
-          <div>08:00 WIB</div>
-          <div>
-            <div>02</div>
-            <div>APRIL</div>
-            <div>2025</div>
+
+        <!-- TANGGAL BARU -->
+        <div class="date-container">
+          <div class="date-box">
+            <div class="line"></div>
+            <div class="date-text">08:00 WIB</div>
+            <div class="line"></div>
+          </div>
+          <div class="date-center">
+            <div class="day">31</div>
+            <div class="year">2025</div>
+          </div>
+          <div class="date-box">
+            <div class="line"></div>
+            <div class="date-text">AGUSTUS</div>
+            <div class="line"></div>
           </div>
         </div>
+
         <div class="scroll-icon">⬇ scroll kebawah ⬇</div>
       </div>
 
       <div class="section">
         <h2>Ari & Rona</h2>
-        <p>02 April 2025</p>
+        <p>31 Agustus 2025</p>
       </div>
 
       <div class="section">
