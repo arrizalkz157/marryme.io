@@ -35,6 +35,16 @@
       position: relative;
     }
 
+    .floating-flower {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      width: 100px;
+      pointer-events: none;
+      opacity: 0.85;
+      z-index: 2;
+    }
+
     .content {
       max-width: 600px;
       margin: 0 auto;
@@ -256,7 +266,10 @@
       </div>
     </div>
 
-    <!-- Bunga-bunga animasi -->
+    <!-- Bunga GIF yang menempel -->
+    <img src="Bunga.gif" class="floating-flower" alt="Bunga Gif">
+
+    <!-- Bunga-bunga animasi lainnya -->
     <div class="flower-container">
       <img src="bunga1.png" class="flower" alt="Bunga 1">
       <img src="bunga2.png" class="flower" alt="Bunga 2">
@@ -315,6 +328,7 @@
 
 </body>
 </html>
+
 
 
 
