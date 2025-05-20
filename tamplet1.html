@@ -12,12 +12,10 @@
     }
 
     body {
+      display: flex;
+      height: 100vh;
       font-family: 'Playfair Display', serif;
       background: #fefefe;
-      height: auto;
-      min-height: 200vh;
-      overflow-y: scroll;
-      display: flex;
     }
 
     .left-side {
@@ -30,56 +28,36 @@
 
     .right-side {
       flex: 1;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .background-layer {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      min-height: 200vh;
+      overflow-y: scroll;
+      padding: 20px;
       background: url('Backgraound tamplet.jpeg') no-repeat center top;
       background-size: cover;
-      background-attachment: scroll;
-      z-index: 0;
+      position: relative;
     }
 
-    .scrollable-content {
-      position: fixed;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .floating-flower {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      width: 100px;
       pointer-events: none;
+      opacity: 0.85;
+      z-index: 2;
     }
 
     .content {
       max-width: 600px;
-      padding: 40px;
+      margin: 0 auto;
+      padding-top: 80px;
       text-align: center;
       color: #333;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 20px;
-      pointer-events: auto;
     }
 
     .hero {
       text-align: center;
+      padding: 80px 20px 40px;
       color: #2e2e2e;
       font-family: 'Cinzel', serif;
-    }
-
-    .hero .subtitle {
-      font-size: 20px;
-      margin-bottom: 10px;
     }
 
     .hero .initials {
@@ -151,46 +129,12 @@
     }
 
     .section {
-      margin-top: 40px;
+      margin-bottom: 40px;
     }
 
     .section h2, .section h3 {
       color: #F26480;
       font-family: 'Cinzel', serif;
-    }
-
-    .floating-flower {
-      position: absolute;
-      bottom: 20px;
-      right: 30px;
-      width: 100px;
-      pointer-events: none;
-      opacity: 0.85;
-      z-index: 2;
-    }
-
-    .flower-container {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .flower {
-      width: 80px;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .flower:nth-child(2) { animation-delay: 1s; }
-    .flower:nth-child(3) { animation-delay: 2s; }
-    .flower:nth-child(4) { animation-delay: 3s; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(2deg); }
     }
 
     .floating-menu {
@@ -251,6 +195,30 @@
       color: #fff;
       opacity: 1;
     }
+
+    .flower-container {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .flower {
+      width: 80px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .flower:nth-child(2) { animation-delay: 1s; }
+    .flower:nth-child(3) { animation-delay: 2s; }
+    .flower:nth-child(4) { animation-delay: 3s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
+    }
   </style>
 </head>
 <body>
@@ -258,53 +226,55 @@
   <div class="left-side"></div>
 
   <div class="right-side">
-    <div class="background-layer"></div>
-    <div class="scrollable-content">
-      <div class="content">
-        <div class="hero">
-          <div class="subtitle">The Wedding</div>
-          <div class="initials">A&R</div>
-          <div class="names"><span>Ari dan Rona</span></div>
+    <div class="content">
+      <div class="hero">
+        <div class="subtitle">The Wedding</div>
+        <div class="initials">A&R</div>
+        <div class="names">
+          <span>Ari dan Rona</span>
+        </div>
 
-          <div class="date-container">
-            <div class="date-box">
-              <div class="line"></div>
-              <div class="date-text">08:00 WIB</div>
-              <div class="line"></div>
-            </div>
-            <div class="date-center">
-              <div class="day">31</div>
-              <div class="year">2025</div>
-            </div>
-            <div class="date-box">
-              <div class="line"></div>
-              <div class="date-text">AGUSTUS</div>
-              <div class="line"></div>
-            </div>
+        <!-- TANGGAL BARU -->
+        <div class="date-container">
+          <div class="date-box">
+            <div class="line"></div>
+            <div class="date-text">08:00 WIB</div>
+            <div class="line"></div>
           </div>
-
-          <div class="scroll-icon">⬇ scroll kebawah ⬇</div>
+          <div class="date-center">
+            <div class="day">31</div>
+            <div class="year">2025</div>
+          </div>
+          <div class="date-box">
+            <div class="line"></div>
+            <div class="date-text">AGUSTUS</div>
+            <div class="line"></div>
+          </div>
         </div>
 
-        <div class="section">
-          <h2>Ari & Rona</h2>
-          <p>31 Agustus 2025</p>
-        </div>
-
-        <div class="section">
-          <h3>Lokasi</h3>
-          <p>Taman Indah, Jakarta</p>
-        </div>
+        <div class="scroll-icon">⬇ scroll kebawah ⬇</div>
       </div>
 
-      <img src="Bunga.gif" class="floating-flower" alt="Bunga Gif">
-
-      <div class="flower-container">
-        <img src="bunga1.png" class="flower" alt="Bunga 1">
-        <img src="bunga2.png" class="flower" alt="Bunga 2">
-        <img src="bunga3.png" class="flower" alt="Bunga 3">
-        <img src="bunga4.png" class="flower" alt="Bunga 4">
+      <div class="section">
+        <h2>Ari & Rona</h2>
+        <p>31 Agustus 2025</p>
       </div>
+
+      <div class="section">
+        <h3>Lokasi</h3>
+        <p>Taman Indah, Jakarta</p>
+      </div>
+    </div>
+
+    <!-- Bunga GIF yang menempel -->
+    <img src="Bunga.gif" class="floating-flower" alt="Bunga Gif">
+
+    <!-- Bunga-bunga animasi lainnya -->
+    <div class="flower-container">
+      <img src="bunga1.png" class="flower" alt="Bunga 1">
+      <img src="bunga2.png" class="flower" alt="Bunga 2">
+      <img src="bunga3.png" class="flower" alt="Bunga 3">
+      <img src="bunga4.png" class="flower" alt="Bunga 4">
     </div>
   </div>
 
