@@ -16,6 +16,7 @@
       height: 100vh;
       font-family: 'Playfair Display', serif;
       background: #fefefe;
+      overflow: hidden; /* Hapus scroll dari seluruh halaman */
     }
 
     .left-side {
@@ -28,11 +29,15 @@
 
     .right-side {
       flex: 1;
-      overflow-y: scroll;
+      height: 100vh;
       padding: 20px;
       background: url('Backgraound tamplet.jpeg') no-repeat center top;
       background-size: cover;
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden; /* Hapus scroll */
     }
 
     .floating-flower {
@@ -47,15 +52,15 @@
 
     .content {
       max-width: 600px;
-      margin: 0 auto;
-      padding-top: 80px;
+      max-height: 90vh;
+      overflow: hidden;
       text-align: center;
       color: #333;
     }
 
     .hero {
       text-align: center;
-      padding: 80px 20px 40px;
+      padding: 40px 20px;
       color: #2e2e2e;
       font-family: 'Cinzel', serif;
     }
@@ -122,14 +127,14 @@
     }
 
     .scroll-icon {
-      margin-top: 40px;
+      margin-top: 30px;
       font-size: 14px;
       font-style: italic;
       color: #555;
     }
 
     .section {
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
 
     .section h2, .section h3 {
@@ -234,7 +239,6 @@
           <span>Ari dan Rona</span>
         </div>
 
-        <!-- TANGGAL BARU -->
         <div class="date-container">
           <div class="date-box">
             <div class="line"></div>
@@ -266,10 +270,8 @@
       </div>
     </div>
 
-    <!-- Bunga GIF yang menempel -->
     <img src="Bunga.gif" class="floating-flower" alt="Bunga Gif">
 
-    <!-- Bunga-bunga animasi lainnya -->
     <div class="flower-container">
       <img src="bunga1.png" class="flower" alt="Bunga 1">
       <img src="bunga2.png" class="flower" alt="Bunga 2">
