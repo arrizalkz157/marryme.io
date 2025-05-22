@@ -16,7 +16,7 @@
       height: 100vh;
       font-family: 'Playfair Display', serif;
       background: #fefefe;
-      overflow: hidden; /* Hapus scroll dari seluruh halaman */
+      overflow: hidden;
     }
 
     .left-side {
@@ -37,17 +37,17 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden; /* Hapus scroll */
+      overflow: hidden;
     }
 
     .floating-flower {
       position: absolute;
-      bottom: 20px;
-      right: 30px;
+      bottom: -20px;
+      right: -20px;
       width: 140px;
       pointer-events: none;
-      opacity: 0.85;
-      z-index: 2;
+      opacity: 0.9;
+      z-index: 10;
     }
 
     .content {
@@ -255,10 +255,10 @@
             <div class="line"></div>
           </div>
         </div>
-
-       
+      </div>
     </div>
 
+    <!-- Bunga GIF di pojok kanan bawah -->
     <img src="Bunga.gif" class="floating-flower" alt="Bunga Gif">
   </div>
 
@@ -312,6 +312,7 @@
 
 </body>
 </html>
+
 
 
 
