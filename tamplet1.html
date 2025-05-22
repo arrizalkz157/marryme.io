@@ -123,15 +123,6 @@
       color: #555;
     }
 
-    .section {
-      margin-bottom: 20px;
-    }
-
-    .section h2, .section h3 {
-      color: #F26480;
-      font-family: 'Cinzel', serif;
-    }
-
     .floating-menu {
       position: fixed;
       top: 50%;
@@ -193,31 +184,31 @@
 
     .flower-bouquet {
       position: absolute;
-      bottom: 10px;
-      right: 10px;
-      width: 150px;
-      height: 150px;
+      bottom: 0;
+      right: 0;
+      width: 160px;
+      height: 160px;
       pointer-events: none;
       z-index: 10;
     }
 
     .flower-bouquet .flower {
       position: absolute;
-      width: 80px;
+      width: 90px;
       opacity: 0.95;
       animation: float 6s ease-in-out infinite;
     }
 
     .flower1 {
       bottom: 0;
-      right: 20px;
+      right: 0;
       transform: rotate(-10deg);
       z-index: 2;
     }
 
     .flower2 {
       bottom: 10px;
-      right: 50px;
+      right: 40px;
       transform: rotate(10deg);
       z-index: 1;
     }
@@ -258,12 +249,12 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Buket bunga GIF di pojok kanan bawah -->
-    <div class="flower-bouquet">
-      <img src="Bunga1.gif" class="flower flower1" alt="Bunga 1">
-      <img src="Bunga1.gif" class="flower flower2" alt="Bunga 2">
+      <!-- Bunga GIF di pojok kanan bawah -->
+      <div class="flower-bouquet">
+        <img src="Bunga1.gif" alt="Bunga" class="flower flower1">
+        <img src="Bunga1.gif" alt="Bunga" class="flower flower2">
+      </div>
     </div>
   </div>
 
@@ -317,6 +308,7 @@
 
 </body>
 </html>
+
 
 
 
