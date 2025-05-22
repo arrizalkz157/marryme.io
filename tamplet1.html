@@ -40,16 +40,6 @@
       overflow: hidden;
     }
 
-    .floating-flower {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      width: 140px;
-      pointer-events: none;
-      opacity: 0.9;
-      z-index: 10;
-    }
-
     .content {
       max-width: 600px;
       max-height: 90vh;
@@ -201,24 +191,36 @@
       opacity: 1;
     }
 
-    .flower-container {
+    .flower-bouquet {
       position: absolute;
-      bottom: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
+      bottom: 10px;
+      right: 10px;
+      width: 150px;
+      height: 150px;
       pointer-events: none;
       z-index: 10;
     }
 
-    .flower {
+    .flower-bouquet .flower {
+      position: absolute;
       width: 80px;
+      opacity: 0.95;
       animation: float 6s ease-in-out infinite;
     }
 
-    .flower:nth-child(2) { animation-delay: 1s; }
-    .flower:nth-child(3) { animation-delay: 2s; }
-    .flower:nth-child(4) { animation-delay: 3s; }
+    .flower1 {
+      bottom: 0;
+      right: 20px;
+      transform: rotate(-10deg);
+      z-index: 2;
+    }
+
+    .flower2 {
+      bottom: 10px;
+      right: 50px;
+      transform: rotate(10deg);
+      z-index: 1;
+    }
 
     @keyframes float {
       0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -258,8 +260,11 @@
       </div>
     </div>
 
-    <!-- Bunga GIF di pojok kanan bawah -->
-    <img src="Bunga1.gif" class="floating-flower" alt="Bunga1 Gif">
+    <!-- Buket bunga GIF di pojok kanan bawah -->
+    <div class="flower-bouquet">
+      <img src="Bunga1.gif" class="flower flower1" alt="Bunga 1">
+      <img src="Bunga1.gif" class="flower flower2" alt="Bunga 2">
+    </div>
   </div>
 
   <div class="floating-menu">
@@ -312,6 +317,7 @@
 
 </body>
 </html>
+
 
 
 
