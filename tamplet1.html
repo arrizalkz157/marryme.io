@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Undangan Ari & Rona</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display&family=Cormorant+Garamond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display&family=Cormorant+Garamond&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -17,6 +17,7 @@
       font-family: 'Playfair Display', serif;
       background: #fefefe;
       overflow: hidden;
+      position: relative;
     }
 
     .left-side {
@@ -46,6 +47,8 @@
       overflow: hidden;
       text-align: center;
       color: #333;
+      position: relative;
+      width: 100%;
     }
 
     .hero {
@@ -53,6 +56,8 @@
       padding: 40px 20px;
       color: #2e2e2e;
       font-family: 'Cinzel', serif;
+      position: relative;
+      z-index: 20;
     }
 
     .hero .initials {
@@ -218,6 +223,7 @@
       50% { transform: translateY(-10px) rotate(2deg); }
     }
 
+    /* Bunga tetap di kanan bawah */
     .bottom-flower {
       position: fixed;
       bottom: 0;
@@ -227,26 +233,29 @@
       pointer-events: none;
     }
 
-    /* Tambahan bunga kiri bawah di dalam right-side */
+    /* Container bunga kiri bawah (bagian kanan undangan) */
     .bottom-left-flowers {
       position: absolute;
       bottom: 0;
       left: 0;
       display: flex;
       flex-direction: row;
-      gap: 8px;
-      z-index: 5;
+      gap: 0; /* supaya gambar rengket */
+      margin: 0;
+      padding: 0;
+      z-index: 15;
       pointer-events: none;
     }
 
     .bottom-left-flowers img {
       width: 200px;
       height: auto;
+      margin: 0;
+      display: block; /* hilangkan spasi bawah inline */
     }
   </style>
 </head>
 <body>
-
   <div class="left-side"></div>
 
   <div class="right-side">
@@ -278,19 +287,21 @@
 
       <!-- Bunga GIF di pojok kanan bawah -->
       <div class="flower-bouquet">
-        <img src="Bunga1.gif" alt="Bunga" class="flower flower1">
-        <img src="Bunga1.gif" alt="Bunga" class="flower flower2">
+        <img src="Bunga1.gif" alt="Bunga" class="flower flower1" />
+        <img src="Bunga1.gif" alt="Bunga" class="flower flower2" />
       </div>
 
-      <!-- Dua bunga PNG di pojok kiri bawah -->
+      <!-- Dua gambar bunga2.png di pojok kiri bawah (bagian kanan undangan), rengket tanpa celah -->
       <div class="bottom-left-flowers">
-        <img src="Bunga2.png" alt="Bunga kiri bawah 1">
-        <img src="Bunga2.png" alt="Bunga kiri bawah 2">
+        <img src="Bunga2.png" alt="Bunga kiri bawah 1" />
+        <img src="Bunga2.png" alt="Bunga kiri bawah 2" />
       </div>
     </div>
   </div>
 
-  <!-- Menu mengambang -->
+  <!-- Gambar bunga tetap di kanan bawah -->
+  <img src="Bunga2.png" alt="Bunga bawah" class="bottom-flower" />
+
   <div class="floating-menu">
     <button class="menu-button active" onclick="setActive(this)">
       <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 
@@ -330,9 +341,6 @@
     </button>
   </div>
 
-  <!-- Gambar bunga tetap di kanan bawah -->
-  <img src="Bunga2.png" alt="Bunga bawah" class="bottom-flower">
-
   <script>
     function setActive(el) {
       document.querySelectorAll('.menu-button').forEach(btn => {
@@ -341,9 +349,9 @@
       el.classList.add('active');
     }
   </script>
-
 </body>
 </html>
+
 
 
 
