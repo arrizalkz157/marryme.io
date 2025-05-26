@@ -221,7 +221,7 @@
       50% { transform: translateY(-10px) rotate(2deg); }
     }
 
-    /* Container untuk 2 gambar bunga bawah kanan agar menempel */
+    /* Container untuk 4 gambar bunga bawah kanan agar menempel */
     .bottom-right-flowers {
       position: absolute;
       bottom: 0;
@@ -232,7 +232,7 @@
     }
 
     .bottom-right-flowers img {
-      width: 160px;
+      width: 80px; /* ukuran dikurangi supaya muat 4 gambar */
       height: auto;
       display: block;
       margin: 0;
@@ -292,10 +292,12 @@
     <!-- Tambahan bunga1.gif di bawah tengah sebelah kanan undangan -->
     <img src="Bunga1.gif" alt="Bunga bawah tengah kanan" class="flower-bottom-middle" />
 
-    <!-- Dua gambar bunga2.png menempel di pojok kanan bawah -->
+    <!-- Empat gambar bunga2.png menempel di pojok kanan bawah -->
     <div class="bottom-right-flowers">
       <img src="Bunga2.png" alt="Bunga bawah 1" />
       <img src="Bunga2.png" alt="Bunga bawah 2" />
+      <img src="Bunga2.png" alt="Bunga bawah 3" />
+      <img src="Bunga2.png" alt="Bunga bawah 4" />
     </div>
 
   </div>
@@ -350,6 +352,7 @@
 
 </body>
 </html>
+
 
 
 
