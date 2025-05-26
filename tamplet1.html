@@ -218,12 +218,13 @@
       50% { transform: translateY(-10px) rotate(2deg); }
     }
 
-    /* Tambahan untuk bunga di kanan bawah */
+    /* Gambar bunga bawah melebar penuh */
     .bottom-flower {
       position: fixed;
       bottom: 0;
-      right: 0;
-      width: 220px;
+      left: 0;
+      width: 100%;
+      height: auto;
       z-index: 5;
       pointer-events: none;
     }
@@ -307,7 +308,7 @@
     </button>
   </div>
 
-  <!-- Gambar bunga tetap di kanan bawah -->
+  <!-- Gambar bunga bawah full stretch -->
   <img src="Bunga2.png" alt="Bunga bawah" class="bottom-flower">
 
   <script>
@@ -321,6 +322,7 @@
 
 </body>
 </html>
+
 
 
 
