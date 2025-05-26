@@ -238,6 +238,17 @@
       margin: 0;
       padding: 0;
     }
+
+    /* Posisi bunga1.gif di bawah tengah sebelah kanan undangan */
+    .flower-bottom-middle {
+      position: absolute;
+      bottom: 10px; /* jarak dari bawah */
+      right: 170px; /* geser kiri supaya rapat dengan bunga2.png */
+      width: 160px;
+      height: auto;
+      pointer-events: none;
+      z-index: 20;
+    }
   </style>
 </head>
 <body>
@@ -277,6 +288,9 @@
         <img src="Bunga1.gif" alt="Bunga" class="flower flower2" />
       </div>
     </div>
+
+    <!-- Tambahan bunga1.gif di bawah tengah sebelah kanan undangan -->
+    <img src="Bunga1.gif" alt="Bunga bawah tengah kanan" class="flower-bottom-middle" />
 
     <!-- Dua gambar bunga2.png menempel di pojok kanan bawah -->
     <div class="bottom-right-flowers">
@@ -336,6 +350,7 @@
 
 </body>
 </html>
+
 
 
 
