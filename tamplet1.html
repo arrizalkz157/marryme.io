@@ -218,13 +218,30 @@
       50% { transform: translateY(-10px) rotate(2deg); }
     }
 
-    .bottom-left-flower {
-      position: absolute;
+    .bottom-flower {
+      position: fixed;
       bottom: 0;
-      left: 0;
+      right: 0;
       width: 220px;
       z-index: 5;
       pointer-events: none;
+    }
+
+    /* Tambahan bunga kiri bawah di dalam right-side */
+    .bottom-left-flowers {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .bottom-left-flowers img {
+      width: 200px;
+      height: auto;
     }
   </style>
 </head>
@@ -264,12 +281,16 @@
         <img src="Bunga1.gif" alt="Bunga" class="flower flower1">
         <img src="Bunga1.gif" alt="Bunga" class="flower flower2">
       </div>
-    </div>
 
-    <!-- Bunga kiri bawah dalam right-side -->
-    <img src="Bunga2.png" alt="Bunga bawah kiri" class="bottom-left-flower">
+      <!-- Dua bunga PNG di pojok kiri bawah -->
+      <div class="bottom-left-flowers">
+        <img src="Bunga2.png" alt="Bunga kiri bawah 1">
+        <img src="Bunga2.png" alt="Bunga kiri bawah 2">
+      </div>
+    </div>
   </div>
 
+  <!-- Menu mengambang -->
   <div class="floating-menu">
     <button class="menu-button active" onclick="setActive(this)">
       <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 
@@ -309,6 +330,9 @@
     </button>
   </div>
 
+  <!-- Gambar bunga tetap di kanan bawah -->
+  <img src="Bunga2.png" alt="Bunga bawah" class="bottom-flower">
+
   <script>
     function setActive(el) {
       document.querySelectorAll('.menu-button').forEach(btn => {
@@ -320,6 +344,7 @@
 
 </body>
 </html>
+
 
 
 
