@@ -17,7 +17,6 @@
       font-family: 'Playfair Display', serif;
       background: #fefefe;
       overflow: hidden;
-      position: relative;
     }
 
     .left-side {
@@ -36,10 +35,10 @@
       background-size: cover;
       position: relative;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      flex-direction: column;
     }
 
     .content {
@@ -48,9 +47,8 @@
       overflow: hidden;
       text-align: center;
       color: #333;
-      position: relative;
-      width: 100%;
-      z-index: 20; /* di atas bunga */
+      flex-grow: 1;
+      padding-bottom: 160px; /* ruang untuk bunga bawah */
     }
 
     .hero {
@@ -58,8 +56,6 @@
       padding: 40px 20px;
       color: #2e2e2e;
       font-family: 'Cinzel', serif;
-      position: relative;
-      z-index: 20;
     }
 
     .hero .initials {
@@ -225,38 +221,27 @@
       50% { transform: translateY(-10px) rotate(2deg); }
     }
 
-    /* Gambar bunga tetap di kanan bawah */
-    .bottom-flower {
-      position: fixed;
+    /* Container untuk 2 gambar bunga bawah kanan agar menempel */
+    .bottom-right-flowers {
+      position: absolute;
       bottom: 0;
       right: 0;
-      width: 220px;
-      z-index: 5;
-      pointer-events: none;
-    }
-
-    /* Container bunga kiri bawah (bagian kanan undangan), bawah content */
-    .bottom-left-flowers {
-      margin-top: auto; /* dorong ke bawah */
       display: flex;
-      flex-direction: row;
-      gap: 0; /* tanpa celah */
-      align-self: flex-start; /* pojok kiri bawah dalam right-side */
-      width: 400px;
-      pointer-events: none;
-      z-index: 10;
+      gap: 0; /* no gap supaya menempel */
+      z-index: 20;
     }
 
-    .bottom-left-flowers img {
-      width: 200px;
+    .bottom-right-flowers img {
+      width: 160px;
       height: auto;
-      margin: 0;
       display: block;
+      margin: 0;
+      padding: 0;
     }
-
   </style>
 </head>
 <body>
+
   <div class="left-side"></div>
 
   <div class="right-side">
@@ -285,23 +270,21 @@
           </div>
         </div>
       </div>
+
+      <!-- Bunga GIF di pojok kanan bawah -->
+      <div class="flower-bouquet">
+        <img src="Bunga1.gif" alt="Bunga" class="flower flower1" />
+        <img src="Bunga1.gif" alt="Bunga" class="flower flower2" />
+      </div>
     </div>
 
-    <!-- Dua gambar bunga2.png di bawah content, pojok kiri bawah kanan undangan -->
-    <div class="bottom-left-flowers">
-      <img src="Bunga2.png" alt="Bunga kiri bawah 1" />
-      <img src="Bunga2.png" alt="Bunga kiri bawah 2" />
+    <!-- Dua gambar bunga2.png menempel di pojok kanan bawah -->
+    <div class="bottom-right-flowers">
+      <img src="Bunga2.png" alt="Bunga bawah 1" />
+      <img src="Bunga2.png" alt="Bunga bawah 2" />
     </div>
 
-    <!-- Bunga GIF di pojok kanan bawah -->
-    <div class="flower-bouquet">
-      <img src="Bunga1.gif" alt="Bunga" class="flower flower1" />
-      <img src="Bunga1.gif" alt="Bunga" class="flower flower2" />
-    </div>
   </div>
-
-  <!-- Gambar bunga tetap di kanan bawah -->
-  <img src="Bunga2.png" alt="Bunga bawah" class="bottom-flower" />
 
   <div class="floating-menu">
     <button class="menu-button active" onclick="setActive(this)">
@@ -350,6 +333,7 @@
       el.classList.add('active');
     }
   </script>
+
 </body>
 </html>
 
