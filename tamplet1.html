@@ -218,11 +218,10 @@
       50% { transform: translateY(-10px) rotate(2deg); }
     }
 
-    /* Tambahan untuk bunga di kanan bawah */
-    .bottom-flower {
-      position: fixed;
+    .bottom-left-flower {
+      position: absolute;
       bottom: 0;
-      right: 0;
+      left: 0;
       width: 220px;
       z-index: 5;
       pointer-events: none;
@@ -266,6 +265,9 @@
         <img src="Bunga1.gif" alt="Bunga" class="flower flower2">
       </div>
     </div>
+
+    <!-- Bunga kiri bawah dalam right-side -->
+    <img src="Bunga2.png" alt="Bunga bawah kiri" class="bottom-left-flower">
   </div>
 
   <div class="floating-menu">
@@ -306,9 +308,6 @@
       <span>RSVP</span>
     </button>
   </div>
-
-  <!-- Gambar bunga tetap di kanan bawah -->
-  <img src="Bunga2.png" alt="Bunga bawah" class="bottom-flower">
 
   <script>
     function setActive(el) {
