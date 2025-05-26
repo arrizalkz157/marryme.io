@@ -199,7 +199,6 @@
       animation: float 6s ease-in-out infinite;
     }
 
-    /* Geser bunga ke bawah agar batang tidak terlihat */
     .flower1 {
       bottom: -20px;
       right: 0;
@@ -217,6 +216,16 @@
     @keyframes float {
       0%, 100% { transform: translateY(0) rotate(0deg); }
       50% { transform: translateY(-10px) rotate(2deg); }
+    }
+
+    /* Tambahan untuk bunga di kanan bawah */
+    .bottom-flower {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 220px;
+      z-index: 5;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -298,6 +307,9 @@
     </button>
   </div>
 
+  <!-- Gambar bunga tetap di kanan bawah -->
+  <img src="Bungabawah.jpeg" alt="Bunga bawah" class="bottom-flower">
+
   <script>
     function setActive(el) {
       document.querySelectorAll('.menu-button').forEach(btn => {
@@ -309,7 +321,6 @@
 
 </body>
 </html>
-
 
 
 
