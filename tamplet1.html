@@ -27,44 +27,6 @@
       position: relative;
     }
 
-    /* Bubble animation effect */
-    .bubbles {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 5;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .bubbles span {
-      position: absolute;
-      display: block;
-      width: 10px;
-      height: 10px;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 50%;
-      bottom: -20px;
-      animation: bubble 15s linear infinite;
-      left: calc(100% * var(--i) / 30);
-      animation-duration: calc(10s + var(--i) * 0.3s);
-    }
-
-    @keyframes bubble {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.5;
-        transform: translateY(-200px) scale(1.2);
-      }
-      100% {
-        transform: translateY(-400px) scale(0.8);
-        opacity: 0;
-      }
-    }
-
     .right-side {
       flex: 1;
       height: 100vh;
@@ -299,37 +261,11 @@
       pointer-events: none;
       z-index: 15;
     }
-
-    .bottom-names {
-      position: absolute;
-      bottom: 20px;
-      text-align: center;
-      width: 100%;
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      color: #2f3e46;
-      font-weight: bold;
-      letter-spacing: 2px;
-      z-index: 30;
-    }
   </style>
 </head>
 <body>
 
-  <div class="left-side">
-    <div class="bubbles">
-      <span style="--i:11;"></span>
-      <span style="--i:17;"></span>
-      <span style="--i:25;"></span>
-      <span style="--i:14;"></span>
-      <span style="--i:22;"></span>
-      <span style="--i:18;"></span>
-      <span style="--i:27;"></span>
-      <span style="--i:13;"></span>
-      <span style="--i:19;"></span>
-      <span style="--i:26;"></span>
-    </div>
-  </div>
+  <div class="left-side"></div>
 
   <div class="right-side">
     <div class="content">
@@ -371,20 +307,20 @@
       <img src="bunga3.png" alt="Bunga bawah 2" />
     </div>
 
+    <!-- Tambahan bunga di kanan bawah -->
     <img src="Bunga1.gif" alt="Bunga kanan bawah 1" style="position: absolute; bottom: 10px; right: 50px; width: 60px; z-index: 18;" />
     <img src="Bunga1.gif" alt="Bunga kanan bawah 2" style="position: absolute; bottom: 20px; right: 120px; width: 70px; z-index: 17;" />
     <img src="Bunga1.gif" alt="Bunga kanan bawah 3" style="position: absolute; bottom: 5px; right: 200px; width: 50px; z-index: 19;" />
 
+    <!-- Tambahan bunga di tengah bawah -->
     <img src="Bunga1.gif" alt="Bunga tengah bawah 1" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 65px; z-index: 18;" />
     <img src="Bunga1.gif" alt="Bunga tengah bawah 2" style="position: absolute; bottom: 15px; left: calc(50% - 90px); width: 60px; z-index: 17;" />
     <img src="Bunga1.gif" alt="Bunga tengah bawah 3" style="position: absolute; bottom: 15px; left: calc(50% + 90px); width: 60px; z-index: 17;" />
 
+    <!-- Tambahan bunga di kiri bawah -->
     <img src="Bunga1.gif" alt="Bunga kiri bawah 1" style="position: absolute; bottom: 10px; left: 50px; width: 60px; z-index: 18;" />
     <img src="Bunga1.gif" alt="Bunga kiri bawah 2" style="position: absolute; bottom: 20px; left: 120px; width: 70px; z-index: 17;" />
     <img src="Bunga1.gif" alt="Bunga kiri bawah 3" style="position: absolute; bottom: 5px; left: 200px; width: 50px; z-index: 19;" />
-
-    <!-- Nama tambahan -->
-    <div class="bottom-names">Ari & Rona</div>
   </div>
 
   <div class="floating-menu">
@@ -437,7 +373,6 @@
 
 </body>
 </html>
-
 
 
 
